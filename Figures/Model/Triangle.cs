@@ -5,8 +5,8 @@ namespace Figures.Model
 {
     class Triangle : Figure // equilateral
     {
-        int SideLength;
-        //x , y , 3 cтороны, по умолчанию равносторонний
+        //x , y , по умолчанию равносторонний
+        readonly int SideLength;
 
         public Triangle(int x , int y , int sideLength , Pen pen) // проверка на корректность ввода?
             :base(x , y , pen)
@@ -14,12 +14,12 @@ namespace Figures.Model
             SideLength = sideLength;
         }
 
-        public override void Draw()
+        public override void Draw(Graphics graphics)
         {
             throw new NotImplementedException();
         }
 
-        public override void Move()
+        public override void Move(Point pMin , Point pMax)
         {
             throw new NotImplementedException();
         }

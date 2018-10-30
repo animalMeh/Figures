@@ -141,6 +141,10 @@
             this.pictureBoxFigures.TabStop = false;
             this.pictureBoxFigures.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxFigures_Paint);
             // 
+            // timerFigures
+            // 
+            this.timerFigures.Tick += new System.EventHandler(this.timerFigures_Tick);
+            // 
             // FigureForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);

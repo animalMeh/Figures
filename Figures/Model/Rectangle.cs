@@ -1,23 +1,49 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Figures.Model
 {
     class Rectangle : Figure
     {
-        //x,y
+      
+        readonly int Width;
+        readonly int Height;
 
-        public override void Draw()
+        public Rectangle(int x , int y ,int Width , int Height , Pen pen )
+            :base(x,y, pen)
         {
-            throw new NotImplementedException();
+            this.Width = Width;
+            this.Height = Height;
         }
 
-        public override void Move()
+        public override void Draw(Graphics graphics)
         {
-            throw new NotImplementedException();
+            Graphics g = graphics;
+            g.DrawRectangle(Pen, X, Y, Width, Height);
+        }
+
+        public override void Move(Point pMin , Point pMax)
+        {
+
+            if (pMin.Y <= 0)
+            {
+                dY = -dY;
+            }
+            if (Y + Height >= pMax.Y)
+            {
+                dY = -dY;
+            }
+            if (X + Width >= pMax.X )
+            {
+                dX = -dX;
+            }
+            if (pMin.X <= 0 )
+            {
+                dX = -dX;
+            }
+            X += dX;
+            Y += dY;
+            
         }
     }
 }
