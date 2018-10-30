@@ -47,6 +47,7 @@
             // 
             // panelOptions
             // 
+            this.panelOptions.BackColor = System.Drawing.Color.RosyBrown;
             this.panelOptions.Controls.Add(this.buttonStop);
             this.panelOptions.Controls.Add(this.buttonRectangle);
             this.panelOptions.Controls.Add(this.buttonCircle);
@@ -59,6 +60,9 @@
             // 
             // buttonStop
             // 
+            this.buttonStop.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.buttonStop.FlatAppearance.BorderSize = 3;
+            this.buttonStop.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.buttonStop.Font = new System.Drawing.Font("Arial Narrow", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStop.Location = new System.Drawing.Point(965, 12);
             this.buttonStop.Name = "buttonStop";
@@ -70,6 +74,9 @@
             // buttonRectangle
             // 
             this.buttonRectangle.BackColor = System.Drawing.Color.Silver;
+            this.buttonRectangle.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.buttonRectangle.FlatAppearance.BorderSize = 3;
+            this.buttonRectangle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.buttonRectangle.Font = new System.Drawing.Font("Arial Narrow", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRectangle.Location = new System.Drawing.Point(287, 12);
             this.buttonRectangle.Name = "buttonRectangle";
@@ -82,6 +89,9 @@
             // buttonCircle
             // 
             this.buttonCircle.BackColor = System.Drawing.Color.Silver;
+            this.buttonCircle.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.buttonCircle.FlatAppearance.BorderSize = 3;
+            this.buttonCircle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.buttonCircle.Font = new System.Drawing.Font("Arial Narrow", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCircle.Location = new System.Drawing.Point(151, 12);
             this.buttonCircle.Name = "buttonCircle";
@@ -93,7 +103,10 @@
             // 
             // buttonTriangle
             // 
-            this.buttonTriangle.BackColor = System.Drawing.Color.Silver;
+            this.buttonTriangle.BackColor = System.Drawing.Color.Gainsboro;
+            this.buttonTriangle.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonTriangle.FlatAppearance.BorderSize = 3;
+            this.buttonTriangle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.buttonTriangle.Font = new System.Drawing.Font("Arial Narrow", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTriangle.Location = new System.Drawing.Point(13, 12);
             this.buttonTriangle.Name = "buttonTriangle";
@@ -143,6 +156,7 @@
             // 
             // timerFigures
             // 
+            this.timerFigures.Interval = 25;
             this.timerFigures.Tick += new System.EventHandler(this.timerFigures_Tick);
             // 
             // FigureForm

@@ -14,7 +14,6 @@ namespace Figures
     public partial class FigureForm : Form
     {
         List<Figure> Figures = new List<Figure>();
-
         public FigureForm()
         {
             InitializeComponent();
@@ -23,10 +22,11 @@ namespace Figures
       
         private void pictureBoxFigures_Paint(object sender, PaintEventArgs e)
         {
-            if (Figures.Count != 0)
+            if (Figures.Count > 0)
             {
                 Figures[0].Move(new Point(pictureBoxFigures.Left, pictureBoxFigures.Top), new Point(pictureBoxFigures.Right, pictureBoxFigures.Bottom));
                 Figures[0].Draw(e.Graphics);
+
             }
         }
 
@@ -42,7 +42,8 @@ namespace Figures
 
         private void buttonRectangle_Click(object sender, EventArgs e)
         {
-            Figures.Add(new Model.Rectangle(10, 20, 10, 40 , new Pen(Color.Red)));
+            Figures.Add(new Model.Rectangle(199, 100, 50, 50 , new Pen(Color.Red)));
+
         }
 
         private void timerFigures_Tick(object sender, EventArgs e)

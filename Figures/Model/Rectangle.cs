@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Drawing;
-
+using System.Reflection;
+using Figures.Controller;
 namespace Figures.Model
 {
     class Rectangle : Figure
     {
-      
+          
         readonly int Width;
         readonly int Height;
 
@@ -13,6 +14,7 @@ namespace Figures.Model
             :base(x,y, pen)
         {
             this.Width = Width;
+            
             this.Height = Height;
         }
 
@@ -23,27 +25,18 @@ namespace Figures.Model
         }
 
         public override void Move(Point pMin , Point pMax)
-        {
-
-            if (pMin.Y <= 0)
-            {
+        {          
+           
+            if (Y <= pMin.Y)
                 dY = -dY;
-            }
             if (Y + Height >= pMax.Y)
-            {
                 dY = -dY;
-            }
-            if (X + Width >= pMax.X )
-            {
+            if (X + Width >= pMax.X)
                 dX = -dX;
-            }
-            if (pMin.X <= 0 )
-            {
+            if (X <= pMin.X)
                 dX = -dX;
-            }
-            X += dX;
-            Y += dY;
-            
+            DirectMove();
+           
         }
     }
 }
