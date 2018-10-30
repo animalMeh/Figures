@@ -10,6 +10,11 @@ namespace Figures.Model
         protected int dX = Increment;
         protected int dY = Increment;
         readonly Direction Direction;
+        public int X { get;protected set; }
+        public int Y { get;protected set; }      
+        protected Pen Pen { get; set; }
+        protected int Height { get; set; }
+        protected int Width { get; set; }
 
         protected Figure(int x , int y, Pen p)
         {
@@ -18,16 +23,19 @@ namespace Figures.Model
             Y = y;
             Pen = p;
         }
-        public int X { get;protected set; }
-        public int Y { get;protected set; }
-       
-        protected Pen Pen { get; set; }
-
-        abstract public void Move(Point pMin , Point pMax);// height of our form
         abstract public void Draw(Graphics graphics);
 
-        protected void DirectMove()
+        public void Move(Point pMin, Point pMax)
         {
+            if (Y <= pMin.Y)
+                dY = -dY;
+            if (Y + Height >= pMax.Y)
+                dY = -dY;
+            if (X + Width >= pMax.X)
+                dX = -dX;
+            if (X <= pMin.X)
+                dX = -dX;
+
             if (Direction == Direction.Initial315)
             {
                 X += dX;

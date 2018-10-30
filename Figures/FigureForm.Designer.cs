@@ -64,9 +64,9 @@
             this.buttonStop.FlatAppearance.BorderSize = 3;
             this.buttonStop.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.buttonStop.Font = new System.Drawing.Font("Arial Narrow", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStop.Location = new System.Drawing.Point(965, 12);
+            this.buttonStop.Location = new System.Drawing.Point(962, 12);
             this.buttonStop.Name = "buttonStop";
-            this.buttonStop.Size = new System.Drawing.Size(103, 96);
+            this.buttonStop.Size = new System.Drawing.Size(109, 96);
             this.buttonStop.TabIndex = 3;
             this.buttonStop.Text = "Stop";
             this.buttonStop.UseVisualStyleBackColor = true;

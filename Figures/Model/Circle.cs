@@ -12,16 +12,15 @@ namespace Figures.Model
             :base(x , y, pen)
         {
             this.Radius = Radius;
+            Width = Radius * 2;
+            Height = Radius * 2;
         }
 
         public override void Draw(Graphics graphics)
         {
-            throw new NotImplementedException();
+            Graphics g = graphics;
+            g.DrawEllipse(Pen, X, Y, Width, Height);
         }
 
-        public override void Move(Point pMin, Point pMax)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
