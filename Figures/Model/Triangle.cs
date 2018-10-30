@@ -1,15 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Figures.Model
 {
-    class Triangle : Figure
+    class Triangle : Figure // equilateral
     {
-        //x , y
+        int SideLength;
+        //x , y , 3 cтороны, по умолчанию равносторонний
 
+        public Triangle(int x , int y , int sideLength , Pen pen) // проверка на корректность ввода?
+            :base(x , y , pen)
+        {
+            SideLength = sideLength;
+        }
 
         public override void Draw()
         {

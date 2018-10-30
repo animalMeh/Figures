@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelOptions = new System.Windows.Forms.Panel();
-            this.panelListFigures = new System.Windows.Forms.Panel();
-            this.panelProcess = new System.Windows.Forms.Panel();
-            this.buttonTriangle = new System.Windows.Forms.Button();
-            this.buttonCircle = new System.Windows.Forms.Button();
-            this.buttonRectangle = new System.Windows.Forms.Button();
             this.buttonStop = new System.Windows.Forms.Button();
+            this.buttonRectangle = new System.Windows.Forms.Button();
+            this.buttonCircle = new System.Windows.Forms.Button();
+            this.buttonTriangle = new System.Windows.Forms.Button();
+            this.panelListFigures = new System.Windows.Forms.Panel();
             this.listBoxFigures = new System.Windows.Forms.ListBox();
+            this.panelProcess = new System.Windows.Forms.Panel();
             this.pictureBoxFigures = new System.Windows.Forms.PictureBox();
             this.timerFigures = new System.Windows.Forms.Timer(this.components);
             this.panelOptions.SuspendLayout();
@@ -57,45 +57,15 @@
             this.panelOptions.Size = new System.Drawing.Size(1083, 116);
             this.panelOptions.TabIndex = 0;
             // 
-            // panelListFigures
+            // buttonStop
             // 
-            this.panelListFigures.Controls.Add(this.listBoxFigures);
-            this.panelListFigures.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelListFigures.Location = new System.Drawing.Point(0, 116);
-            this.panelListFigures.Name = "panelListFigures";
-            this.panelListFigures.Size = new System.Drawing.Size(207, 367);
-            this.panelListFigures.TabIndex = 1;
-            // 
-            // panelProcess
-            // 
-            this.panelProcess.Controls.Add(this.pictureBoxFigures);
-            this.panelProcess.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelProcess.Location = new System.Drawing.Point(207, 116);
-            this.panelProcess.Name = "panelProcess";
-            this.panelProcess.Size = new System.Drawing.Size(876, 367);
-            this.panelProcess.TabIndex = 2;
-            // 
-            // buttonTriangle
-            // 
-            this.buttonTriangle.BackColor = System.Drawing.Color.Silver;
-            this.buttonTriangle.Font = new System.Drawing.Font("Arial Narrow", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTriangle.Location = new System.Drawing.Point(13, 12);
-            this.buttonTriangle.Name = "buttonTriangle";
-            this.buttonTriangle.Size = new System.Drawing.Size(106, 96);
-            this.buttonTriangle.TabIndex = 0;
-            this.buttonTriangle.Text = "Triangle";
-            this.buttonTriangle.UseVisualStyleBackColor = false;
-            // 
-            // buttonCircle
-            // 
-            this.buttonCircle.BackColor = System.Drawing.Color.Silver;
-            this.buttonCircle.Font = new System.Drawing.Font("Arial Narrow", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCircle.Location = new System.Drawing.Point(151, 12);
-            this.buttonCircle.Name = "buttonCircle";
-            this.buttonCircle.Size = new System.Drawing.Size(103, 96);
-            this.buttonCircle.TabIndex = 1;
-            this.buttonCircle.Text = "Circle";
-            this.buttonCircle.UseVisualStyleBackColor = false;
+            this.buttonStop.Font = new System.Drawing.Font("Arial Narrow", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStop.Location = new System.Drawing.Point(965, 12);
+            this.buttonStop.Name = "buttonStop";
+            this.buttonStop.Size = new System.Drawing.Size(103, 96);
+            this.buttonStop.TabIndex = 3;
+            this.buttonStop.Text = "Stop";
+            this.buttonStop.UseVisualStyleBackColor = true;
             // 
             // buttonRectangle
             // 
@@ -107,16 +77,40 @@
             this.buttonRectangle.TabIndex = 2;
             this.buttonRectangle.Text = "Rectangle";
             this.buttonRectangle.UseVisualStyleBackColor = false;
+            this.buttonRectangle.Click += new System.EventHandler(this.buttonRectangle_Click);
             // 
-            // buttonStop
+            // buttonCircle
             // 
-            this.buttonStop.Font = new System.Drawing.Font("Arial Narrow", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStop.Location = new System.Drawing.Point(965, 12);
-            this.buttonStop.Name = "buttonStop";
-            this.buttonStop.Size = new System.Drawing.Size(103, 96);
-            this.buttonStop.TabIndex = 3;
-            this.buttonStop.Text = "Stop";
-            this.buttonStop.UseVisualStyleBackColor = true;
+            this.buttonCircle.BackColor = System.Drawing.Color.Silver;
+            this.buttonCircle.Font = new System.Drawing.Font("Arial Narrow", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCircle.Location = new System.Drawing.Point(151, 12);
+            this.buttonCircle.Name = "buttonCircle";
+            this.buttonCircle.Size = new System.Drawing.Size(103, 96);
+            this.buttonCircle.TabIndex = 1;
+            this.buttonCircle.Text = "Circle";
+            this.buttonCircle.UseVisualStyleBackColor = false;
+            this.buttonCircle.Click += new System.EventHandler(this.buttonCircle_Click);
+            // 
+            // buttonTriangle
+            // 
+            this.buttonTriangle.BackColor = System.Drawing.Color.Silver;
+            this.buttonTriangle.Font = new System.Drawing.Font("Arial Narrow", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTriangle.Location = new System.Drawing.Point(13, 12);
+            this.buttonTriangle.Name = "buttonTriangle";
+            this.buttonTriangle.Size = new System.Drawing.Size(106, 96);
+            this.buttonTriangle.TabIndex = 0;
+            this.buttonTriangle.Text = "Triangle";
+            this.buttonTriangle.UseVisualStyleBackColor = false;
+            this.buttonTriangle.Click += new System.EventHandler(this.buttonTriangle_Click);
+            // 
+            // panelListFigures
+            // 
+            this.panelListFigures.Controls.Add(this.listBoxFigures);
+            this.panelListFigures.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelListFigures.Location = new System.Drawing.Point(0, 116);
+            this.panelListFigures.Name = "panelListFigures";
+            this.panelListFigures.Size = new System.Drawing.Size(207, 367);
+            this.panelListFigures.TabIndex = 1;
             // 
             // listBoxFigures
             // 
@@ -128,6 +122,15 @@
             this.listBoxFigures.Size = new System.Drawing.Size(207, 367);
             this.listBoxFigures.TabIndex = 0;
             // 
+            // panelProcess
+            // 
+            this.panelProcess.Controls.Add(this.pictureBoxFigures);
+            this.panelProcess.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelProcess.Location = new System.Drawing.Point(207, 116);
+            this.panelProcess.Name = "panelProcess";
+            this.panelProcess.Size = new System.Drawing.Size(876, 367);
+            this.panelProcess.TabIndex = 2;
+            // 
             // pictureBoxFigures
             // 
             this.pictureBoxFigures.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -136,6 +139,7 @@
             this.pictureBoxFigures.Size = new System.Drawing.Size(876, 367);
             this.pictureBoxFigures.TabIndex = 0;
             this.pictureBoxFigures.TabStop = false;
+            this.pictureBoxFigures.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxFigures_Paint);
             // 
             // FigureForm
             // 
