@@ -11,7 +11,6 @@ namespace Figures.Model
         public Triangle(int x , int y , int sideLength , Pen pen) 
             :base(x , y , pen)
         {
-
             Counter++;
             SideLength = sideLength;
             Width = sideLength;

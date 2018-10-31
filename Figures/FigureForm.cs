@@ -25,18 +25,34 @@ namespace Figures
         {
             InitializeComponent();
             listBoxFigures.DataSource = Figures;
-            //listBoxFigures.DisplayMember = "Name";
             timerFigures.Start();
+        }
+
+        //Why??????
+        async void PaintPictureBox(PaintEventArgs e , PictureBox p)
+        {
+            if (Figures.Count > 0)
+            {
+                foreach (var f in Figures)
+                {
+                    await Task.Run(() =>
+                     {
+                         f.Draw(e.Graphics);
+                         f.Move(new Point(pictureBoxFigures.Left, pictureBoxFigures.Top), new Point(pictureBoxFigures.Right, pictureBoxFigures.Bottom));
+                     });
+                }
+            }
         }
       
         private void pictureBoxFigures_Paint(object sender, PaintEventArgs e)
         {
+            // PaintPictureBox(e , pictureBoxFigures);
             if (Figures.Count > 0)
             {
-                foreach(var f in Figures)
-                {
-                    f.Move(new Point(pictureBoxFigures.Left, pictureBoxFigures.Top), new Point(pictureBoxFigures.Right, pictureBoxFigures.Bottom));
-                    f.Draw(e.Graphics);
+                foreach (var f in Figures)
+                {                   
+                  f.Draw(e.Graphics);
+                  f.Move(new Point(pictureBoxFigures.Left, pictureBoxFigures.Top), new Point(pictureBoxFigures.Right, pictureBoxFigures.Bottom));                 
                 }
             }
         }
@@ -45,13 +61,6 @@ namespace Figures
         {
             Figures.Add(new Triangle(r.Next(pictureBoxFigures.Left,pictureBoxFigures.Right - DefaultWidth), 
                 r.Next(pictureBoxFigures.Top, pictureBoxFigures.Bottom - DefaultHeight), 50, new Pen(Color.Blue)));
-            //listBoxFigures.DisplayMember = "Name";
-            //listBoxFigures.DataSource = Figures;
-            
-            
-            //listBoxFigures.Refresh();
-            //listBoxFigures.Update();
-
         }
 
         private void buttonCircle_Click(object sender, EventArgs e)

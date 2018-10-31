@@ -60,6 +60,7 @@
             // 
             // buttonStop
             // 
+            this.buttonStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonStop.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.buttonStop.FlatAppearance.BorderSize = 3;
             this.buttonStop.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -123,7 +124,7 @@
             this.panelListFigures.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelListFigures.Location = new System.Drawing.Point(0, 116);
             this.panelListFigures.Name = "panelListFigures";
-            this.panelListFigures.Size = new System.Drawing.Size(207, 367);
+            this.panelListFigures.Size = new System.Drawing.Size(207, 428);
             this.panelListFigures.TabIndex = 1;
             // 
             // listBoxFigures
@@ -133,7 +134,7 @@
             this.listBoxFigures.ItemHeight = 20;
             this.listBoxFigures.Location = new System.Drawing.Point(0, 0);
             this.listBoxFigures.Name = "listBoxFigures";
-            this.listBoxFigures.Size = new System.Drawing.Size(207, 367);
+            this.listBoxFigures.Size = new System.Drawing.Size(207, 428);
             this.listBoxFigures.TabIndex = 0;
             // 
             // panelProcess
@@ -142,7 +143,7 @@
             this.panelProcess.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelProcess.Location = new System.Drawing.Point(207, 116);
             this.panelProcess.Name = "panelProcess";
-            this.panelProcess.Size = new System.Drawing.Size(876, 367);
+            this.panelProcess.Size = new System.Drawing.Size(876, 428);
             this.panelProcess.TabIndex = 2;
             // 
             // pictureBoxFigures
@@ -150,7 +151,7 @@
             this.pictureBoxFigures.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxFigures.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxFigures.Name = "pictureBoxFigures";
-            this.pictureBoxFigures.Size = new System.Drawing.Size(876, 367);
+            this.pictureBoxFigures.Size = new System.Drawing.Size(876, 428);
             this.pictureBoxFigures.TabIndex = 0;
             this.pictureBoxFigures.TabStop = false;
             this.pictureBoxFigures.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxFigures_Paint);
@@ -164,10 +165,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1083, 483);
+            this.ClientSize = new System.Drawing.Size(1083, 544);
             this.Controls.Add(this.panelProcess);
             this.Controls.Add(this.panelListFigures);
             this.Controls.Add(this.panelOptions);
+            this.MinimumSize = new System.Drawing.Size(600, 500);
             this.Name = "FigureForm";
             this.Text = "FigureForm";
             this.panelOptions.ResumeLayout(false);
