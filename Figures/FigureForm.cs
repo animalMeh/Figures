@@ -14,7 +14,9 @@ namespace Figures
     public partial class FigureForm : Form
     {
         Random r = new Random();
-        List<Figure> Figures = new List<Figure>();
+        BindingList<Figure> Figures = new BindingList<Figure>();
+
+        
         const int DefaultWidth = 50;
         const int DefaultHeight = 50;
 
@@ -22,6 +24,8 @@ namespace Figures
         public FigureForm()
         {
             InitializeComponent();
+            listBoxFigures.DataSource = Figures;
+            //listBoxFigures.DisplayMember = "Name";
             timerFigures.Start();
         }
       
@@ -33,7 +37,6 @@ namespace Figures
                 {
                     f.Move(new Point(pictureBoxFigures.Left, pictureBoxFigures.Top), new Point(pictureBoxFigures.Right, pictureBoxFigures.Bottom));
                     f.Draw(e.Graphics);
-
                 }
             }
         }
@@ -42,6 +45,13 @@ namespace Figures
         {
             Figures.Add(new Triangle(r.Next(pictureBoxFigures.Left,pictureBoxFigures.Right - DefaultWidth), 
                 r.Next(pictureBoxFigures.Top, pictureBoxFigures.Bottom - DefaultHeight), 50, new Pen(Color.Blue)));
+            //listBoxFigures.DisplayMember = "Name";
+            //listBoxFigures.DataSource = Figures;
+            
+            
+            //listBoxFigures.Refresh();
+            //listBoxFigures.Update();
+
         }
 
         private void buttonCircle_Click(object sender, EventArgs e)
@@ -54,11 +64,20 @@ namespace Figures
         {
             Figures.Add(new Model.Rectangle(r.Next(pictureBoxFigures.Left, pictureBoxFigures.Right - DefaultWidth), 
                 r.Next(pictureBoxFigures.Top, pictureBoxFigures.Bottom - DefaultHeight), 50, 50, new Pen(Color.Red)));
+
         }
 
         private void timerFigures_Tick(object sender, EventArgs e)
         {
             pictureBoxFigures.Invalidate();
+        }
+
+        private void buttonStop_Click(object sender, EventArgs e)
+        {
+            if(Figures.Count !=0)
+            {
+                ((Figure)listBoxFigures.SelectedItem).Stop();
+            }
         }
     }
 }

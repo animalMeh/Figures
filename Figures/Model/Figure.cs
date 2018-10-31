@@ -4,8 +4,10 @@ using Figures.Controller;
 
 namespace Figures.Model
 {
-    abstract class Figure
+    abstract class Figure 
     {
+        private bool IsStopped = false;
+        public string Name { get;protected set; }
         const int Increment = 3;
         protected int dX = Increment;
         protected int dY = Increment;
@@ -27,35 +29,43 @@ namespace Figures.Model
 
         public void Move(Point pMin, Point pMax)
         {
-            if (Y <= pMin.Y)
-                dY = -dY;
-            if (Y + Height >= pMax.Y)
-                dY = -dY;
-            if (X + Width >= pMax.X)
-                dX = -dX;
-            if (X <= pMin.X)
-                dX = -dX;
+            if (!IsStopped)
+            {
+                if (Y <= pMin.Y)
+                    dY = -dY;
+                if (Y + Height >= pMax.Y)
+                    dY = -dY;
+                if (X + Width >= pMax.X)
+                    dX = -dX;
+                if (X <= pMin.X)
+                    dX = -dX;
 
-            if (Direction == Direction.Initial315)
-            {
-                X += dX;
-                Y += dY;
+                if (Direction == Direction.Initial315)
+                {
+                    X += dX;
+                    Y += dY;
+                }
+                if (Direction == Direction.Initial45)
+                {
+                    X -= dX;
+                    Y -= dY;
+                }
+                if (Direction == Direction.Initial225)
+                {
+                    X += dX;
+                    Y -= dY;
+                }
+                if (Direction == Direction.Initial135)
+                {
+                    X -= dX;
+                    Y += dY;
+                }
             }
-            if (Direction == Direction.Initial45)
-            {
-                X -= dX;
-                Y -= dY;
-            }
-            if (Direction == Direction.Initial225)
-            {
-                X += dX;
-                Y -= dY;
-            }
-            if (Direction == Direction.Initial135)
-            {
-                X -= dX;
-                Y += dY;
-            }
+        }
+
+        public void Stop()
+        {
+            IsStopped = true;
         }
 
     }
