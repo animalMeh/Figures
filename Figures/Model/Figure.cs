@@ -4,7 +4,7 @@ using Figures.Controller;
 
 namespace Figures.Model
 {
-    abstract class Figure 
+    abstract class Figure :IDisposable
     {
         readonly Random Randomizer = new Random();
 
@@ -49,6 +49,11 @@ namespace Figures.Model
                 X += dX;
                 Y += dY;        
             }
+        }
+
+        public void Dispose()
+        {
+            FigureColor.Dispose();
         }
     }
 }
