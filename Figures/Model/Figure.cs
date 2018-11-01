@@ -6,67 +6,49 @@ namespace Figures.Model
 {
     abstract class Figure 
     {
-        private bool IsStopped = false;
-        public string Name { get;protected set; }
-        const int Increment = 3;
-        protected int dX = Increment;
-        protected int dY = Increment;
-        readonly Direction Direction;
+        readonly Random Randomizer = new Random();
+
+        private int dX;
+        private int dY;
         public int X { get;protected set; }
         public int Y { get;protected set; }      
-        protected Pen Pen { get; set; }
+        
+        protected Pen FigureColor = new Pen(Color.Black); 
         protected int Height { get; set; }
         protected int Width { get; set; }
 
-        protected Figure(int x , int y, Pen p)
+        public string Name { get;protected set; }
+        public bool IsStopped { get; set; }
+
+        protected Figure(Point MaxCoordinate, Pen p = null)
         {
-            Direction = (Controller.Direction)((Random)Activator.CreateInstance(typeof(Random))).Next(0, 4);
-            X = x;
-            Y = y;
-            Pen = p;
+            while (dX == 0 || dY == 0)
+            {
+                dX = Randomizer.Next(-4, 4);
+                dY = Randomizer.Next(-4, 4);
+            }
+            X = Randomizer.Next(0, MaxCoordinate.X);
+            Y = Randomizer.Next(0, MaxCoordinate.Y);
+            if (!(p is null))
+                FigureColor = p;
         }
         abstract public void Draw(Graphics graphics);
 
-        public void Move(Point pMin, Point pMax)
+        public void Move(Point pMax)
         {
             if (!IsStopped)
             {
-                if (Y <= pMin.Y)
+                if (Y <= 0)
                     dY = -dY;
                 if (Y + Height >= pMax.Y)
                     dY = -dY;
                 if (X + Width >= pMax.X)
                     dX = -dX;
-                if (X <= pMin.X)
+                if (X <= 0)
                     dX = -dX;
-
-                if (Direction == Direction.Initial315)
-                {
-                    X += dX;
-                    Y += dY;
-                }
-                if (Direction == Direction.Initial45)
-                {
-                    X -= dX;
-                    Y -= dY;
-                }
-                if (Direction == Direction.Initial225)
-                {
-                    X += dX;
-                    Y -= dY;
-                }
-                if (Direction == Direction.Initial135)
-                {
-                    X -= dX;
-                    Y += dY;
-                }
+                X += dX;
+                Y += dY;        
             }
         }
-
-        public void Stop()
-        {
-            IsStopped = true;
-        }
-
     }
 }

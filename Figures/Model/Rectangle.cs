@@ -6,10 +6,13 @@ namespace Figures.Model
 {
     class Rectangle : Figure
     {
+        const int DEFAULT_WIDTH = 50;
+        const int DEFAULT_HEIGHT = 50;
+
         static int Counter;
 
-        public Rectangle(int x , int y ,int Width , int Height , Pen pen )
-            :base(x,y, pen)
+        public Rectangle(Point MaxCoordinate , int Width  = DEFAULT_WIDTH, int Height = DEFAULT_HEIGHT , Pen pen = null )
+            :base(new Point(MaxCoordinate.X -Width , MaxCoordinate.Y - Height) , pen)
         {
             Counter++;
             this.Width = Width;            
@@ -21,12 +24,13 @@ namespace Figures.Model
         public override void Draw(Graphics graphics)
         {
             Graphics g = graphics;
-            g.DrawRectangle(Pen, X, Y, Width, Height);
+            g.DrawRectangle(FigureColor, X, Y, Width, Height);
         }
 
         public override string ToString()
         {
-            return string.Format($"Rectangle #{Name}");
+            string s = IsStopped ? "Stopped" : "Active";
+            return string.Format($"Rectangle #{Name}      {s}");
         }
 
     }
