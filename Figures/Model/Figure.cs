@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using Figures.Controller;
 
 namespace Figures.Model
 {
