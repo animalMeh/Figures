@@ -79,6 +79,24 @@ namespace Figures.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        internal static string STATE_ACTIVE {
+            get {
+                return ResourceManager.GetString("STATE_ACTIVE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stopped.
+        /// </summary>
+        internal static string STATE_STOPPED {
+            get {
+                return ResourceManager.GetString("STATE_STOPPED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Triangle.
         /// </summary>
         internal static string TriangleFigureName {

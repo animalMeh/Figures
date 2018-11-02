@@ -33,7 +33,8 @@ namespace Figures.Model
         public override void ChangeCulture(CultureInfo c)
         {
             base.ChangeCulture(c);
-            FIGURE_NAME = "Прямоугольник";
+            FIGURE_NAME = Resources.RectangleFigureName;
+
         }
 
         public override string ToString()

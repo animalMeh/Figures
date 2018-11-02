@@ -123,6 +123,12 @@
   <data name="RectangleFigureName" xml:space="preserve">
     <value>Прямоугольник</value>
   </data>
+  <data name="STATE_ACTIVE" xml:space="preserve">
+    <value>Активен</value>
+  </data>
+  <data name="STATE_STOPPED" xml:space="preserve">
+    <value>Остановлен</value>
+  </data>
   <data name="TriangleFigureName" xml:space="preserve">
     <value>Треугольник</value>
   </data>

@@ -40,7 +40,8 @@ namespace Figures.Model
         public override void ChangeCulture(CultureInfo c)
         {
             base.ChangeCulture(c);
-            FIGURE_NAME = "Треугольник";
+            FIGURE_NAME = Resources.TriangleFigureName;
+
         }
         public override string ToString()
         {

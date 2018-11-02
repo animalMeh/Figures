@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Globalization;
 using System.Drawing;
-
+using Figures.Properties;
 
 namespace Figures.Model
 {
     abstract class Figure :IDisposable
     {
         readonly Random Randomizer = new Random();
-        string STATE_ACTIVE = "Active";
-        string STATE_STOPPED = "Stopped";
+        string STATE_ACTIVE = Resources.STATE_ACTIVE;
+        string STATE_STOPPED = Resources.STATE_STOPPED;
         private int dX;
         private int dY;
         public int X { get;protected set; }
@@ -64,13 +64,13 @@ namespace Figures.Model
         {
             if(c.Name == "en")
             {
-                STATE_ACTIVE = "Active";
-                STATE_STOPPED = "Stopped";
+              STATE_ACTIVE = Resources.STATE_ACTIVE;
+              STATE_STOPPED = Resources.STATE_STOPPED;
             }
             if(c.Name == "ru")
             {
-                STATE_ACTIVE = "Активно";
-                STATE_STOPPED = "Остановлено";
+               STATE_ACTIVE = Resources.STATE_ACTIVE;
+               STATE_STOPPED = Resources.STATE_STOPPED;
             }
         }
 

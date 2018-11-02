@@ -32,17 +32,11 @@ namespace Figures.Model
         public override void ChangeCulture(CultureInfo c)
         {
             base.ChangeCulture(c);
-            //if(c.Name == "en")
-            //{
-            //    FIGURE_NAME = "Circle";
-            //}
-            //if(c.Name == "ru")
-            //{
-            //    FIGURE_NAME = "Круг";
-            //}
-        }
+            FIGURE_NAME = Resources.CircleFigureName;
 
-        public override string ToString()
+    }
+
+    public override string ToString()
         {               
             return string.Format($"{FIGURE_NAME} #{Name}: {base.ToString()}");
         }
