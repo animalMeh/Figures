@@ -5,6 +5,7 @@ namespace Figures.Model
 {
     class Circle : Figure
     {
+        const string FIGURE_NAME = "Circle";
         const int DEFAULT_RADIUS = 25;
         static int Counter;
         readonly int Radius;
@@ -29,8 +30,7 @@ namespace Figures.Model
 
         public override string ToString()
         {
-            string s = IsStopped ? "Stopped" : "Active";
-            return string.Format($"Circle #{Name}      {s}");
+            return string.Format($"{FIGURE_NAME} #{Name}: {base.ToString()}");
         }
 
     }

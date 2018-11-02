@@ -5,15 +5,19 @@ using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Figures.Model;
+using System.Resources;
+using System.Threading;
+using System.Globalization;
 
 namespace Figures
 {
     public partial class FigureForm : Form
     {
         BindingList<Figure> Figures = new BindingList<Figure>();
-
+        
         public FigureForm()
         {
+            
             InitializeComponent();
             lbFigures.DataSource = Figures;
             timerFigures.Start();
@@ -67,6 +71,23 @@ namespace Figures
             }
             lbFigures.DataSource = null;
             lbFigures.DataSource = Figures;
+        }
+
+        private void cbLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            //    ResourceManager rm;
+            //    CultureInfo cul;
+
+            //if (cbLanguage.Text == "RU")
+            //{
+            //    cul = CultureInfo.CreateSpecificCulture("ru-RU");
+            //}
+            //else
+            //{
+            //    cul = CultureInfo.CreateSpecificCulture("en-EN");
+            //    rm = new ResourceManager("FigureForm.resx", typeof(FigureForm).Assembly);
+            //}
         }
     }
 }

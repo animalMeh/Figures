@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Drawing;
 using System.Reflection;
-using Figures.Controller;
+
 namespace Figures.Model
 {
     class Rectangle : Figure
     {
+        const string FIGURE_NAME = "Rectangle";
         const int DEFAULT_WIDTH = 50;
         const int DEFAULT_HEIGHT = 50;
 
@@ -29,8 +30,7 @@ namespace Figures.Model
 
         public override string ToString()
         {
-            string s = IsStopped ? "Stopped" : "Active";
-            return string.Format($"Rectangle #{Name}      {s}");
+            return string.Format($"{FIGURE_NAME} #{Name}: {base.ToString()}");
         }
 
     }

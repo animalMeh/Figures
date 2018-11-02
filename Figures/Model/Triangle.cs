@@ -5,6 +5,7 @@ namespace Figures.Model
 {
     class Triangle : Figure 
     {
+        const string FIGURE_NAME = "Triangle";
         const int DEFAULT_SIDE_LENGTH = 50;
         readonly int SideLength;
         static int Counter;
@@ -37,8 +38,7 @@ namespace Figures.Model
 
         public override string ToString()
         {
-            string s = IsStopped ? "Stopped" : "Active";
-            return string.Format($"Triangle #{Name}     {s}");
+            return string.Format($"{FIGURE_NAME} #{Name}: {base.ToString()}");
         }   
     }
 }
