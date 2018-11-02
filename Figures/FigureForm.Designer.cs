@@ -50,7 +50,6 @@
             // 
             // panelOptions
             // 
-            resources.ApplyResources(this.panelOptions, "panelOptions");
             this.panelOptions.BackColor = System.Drawing.Color.RosyBrown;
             this.panelOptions.Controls.Add(this.lLanguage);
             this.panelOptions.Controls.Add(this.cbLanguage);
@@ -58,6 +57,7 @@
             this.panelOptions.Controls.Add(this.btnRectangle);
             this.panelOptions.Controls.Add(this.btnCircle);
             this.panelOptions.Controls.Add(this.btnTriangle);
+            resources.ApplyResources(this.panelOptions, "panelOptions");
             this.panelOptions.Name = "panelOptions";
             // 
             // lLanguage
@@ -68,11 +68,11 @@
             // 
             // cbLanguage
             // 
-            resources.ApplyResources(this.cbLanguage, "cbLanguage");
             this.cbLanguage.FormattingEnabled = true;
             this.cbLanguage.Items.AddRange(new object[] {
             resources.GetString("cbLanguage.Items"),
             resources.GetString("cbLanguage.Items1")});
+            resources.ApplyResources(this.cbLanguage, "cbLanguage");
             this.cbLanguage.Name = "cbLanguage";
             this.cbLanguage.SelectedIndexChanged += new System.EventHandler(this.cbLanguage_SelectedIndexChanged);
             // 
@@ -88,41 +88,41 @@
             // 
             // btnRectangle
             // 
-            resources.ApplyResources(this.btnRectangle, "btnRectangle");
             this.btnRectangle.BackColor = System.Drawing.Color.Silver;
             this.btnRectangle.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnRectangle.FlatAppearance.BorderSize = 3;
             this.btnRectangle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            resources.ApplyResources(this.btnRectangle, "btnRectangle");
             this.btnRectangle.Name = "btnRectangle";
             this.btnRectangle.UseVisualStyleBackColor = false;
             this.btnRectangle.Click += new System.EventHandler(this.btnRectangle_Click);
             // 
             // btnCircle
             // 
-            resources.ApplyResources(this.btnCircle, "btnCircle");
             this.btnCircle.BackColor = System.Drawing.Color.Silver;
             this.btnCircle.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnCircle.FlatAppearance.BorderSize = 3;
             this.btnCircle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            resources.ApplyResources(this.btnCircle, "btnCircle");
             this.btnCircle.Name = "btnCircle";
             this.btnCircle.UseVisualStyleBackColor = false;
             this.btnCircle.Click += new System.EventHandler(this.btnCircle_Click);
             // 
             // btnTriangle
             // 
-            resources.ApplyResources(this.btnTriangle, "btnTriangle");
             this.btnTriangle.BackColor = System.Drawing.Color.Gainsboro;
             this.btnTriangle.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnTriangle.FlatAppearance.BorderSize = 3;
             this.btnTriangle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            resources.ApplyResources(this.btnTriangle, "btnTriangle");
             this.btnTriangle.Name = "btnTriangle";
             this.btnTriangle.UseVisualStyleBackColor = false;
             this.btnTriangle.Click += new System.EventHandler(this.btnTriangle_Click);
             // 
             // panelListFigures
             // 
-            resources.ApplyResources(this.panelListFigures, "panelListFigures");
             this.panelListFigures.Controls.Add(this.lbFigures);
+            resources.ApplyResources(this.panelListFigures, "panelListFigures");
             this.panelListFigures.Name = "panelListFigures";
             // 
             // lbFigures
@@ -133,8 +133,8 @@
             // 
             // panelProcess
             // 
-            resources.ApplyResources(this.panelProcess, "panelProcess");
             this.panelProcess.Controls.Add(this.pbFigures);
+            resources.ApplyResources(this.panelProcess, "panelProcess");
             this.panelProcess.Name = "panelProcess";
             // 
             // pbFigures
@@ -181,5 +181,7 @@
         private System.Windows.Forms.Timer timerFigures;
         private System.Windows.Forms.Label lLanguage;
         private System.Windows.Forms.ComboBox cbLanguage;
+
+       
     }
 }

@@ -5,7 +5,7 @@ namespace Figures.Model
 {
     class Triangle : Figure 
     {
-        const string FIGURE_NAME = "Triangle";
+        static string FIGURE_NAME = "Triangle";
         const int DEFAULT_SIDE_LENGTH = 50;
         readonly int SideLength;
         static int Counter;

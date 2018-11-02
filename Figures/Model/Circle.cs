@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Drawing;
+using System.Globalization;
+using System.Resources;
 
 namespace Figures.Model
 {
     class Circle : Figure
     {
-        const string FIGURE_NAME = "Circle";
+        public static string FIGURE_NAME = "Circle";
         const int DEFAULT_RADIUS = 25;
         static int Counter;
         readonly int Radius;
@@ -19,7 +21,6 @@ namespace Figures.Model
             Width = Radius * 2;
             Height = Radius * 2;
             Name = Counter.ToString();
-
         }
 
         public override void Draw(Graphics graphics)
@@ -28,8 +29,9 @@ namespace Figures.Model
             g.DrawEllipse(FigureColor, X, Y, Width, Height);
         }
 
+       
         public override string ToString()
-        {
+        {               
             return string.Format($"{FIGURE_NAME} #{Name}: {base.ToString()}");
         }
 

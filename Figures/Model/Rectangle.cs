@@ -6,7 +6,7 @@ namespace Figures.Model
 {
     class Rectangle : Figure
     {
-        const string FIGURE_NAME = "Rectangle";
+        static string FIGURE_NAME = "Rectangle";
         const int DEFAULT_WIDTH = 50;
         const int DEFAULT_HEIGHT = 50;
 

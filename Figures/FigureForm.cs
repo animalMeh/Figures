@@ -9,18 +9,20 @@ using System.Resources;
 using System.Threading;
 using System.Globalization;
 
+
+
 namespace Figures
 {
+
     public partial class FigureForm : Form
     {
         BindingList<Figure> Figures = new BindingList<Figure>();
-        
+
         public FigureForm()
         {
-            
-            InitializeComponent();
-            lbFigures.DataSource = Figures;
-            timerFigures.Start();
+           InitializeComponent();
+           lbFigures.DataSource = Figures;
+
         }
 
         private void pbFigures_Paint(object sender, PaintEventArgs e)
@@ -75,19 +77,30 @@ namespace Figures
 
         private void cbLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            //    ResourceManager rm;
-            //    CultureInfo cul;
 
-            //if (cbLanguage.Text == "RU")
-            //{
-            //    cul = CultureInfo.CreateSpecificCulture("ru-RU");
-            //}
-            //else
-            //{
-            //    cul = CultureInfo.CreateSpecificCulture("en-EN");
-            //    rm = new ResourceManager("FigureForm.resx", typeof(FigureForm).Assembly);
-            //}
+            if (cbLanguage.Text == "RU")
+            {
+                ChangeLanguage("ru");
+            }
+            if(cbLanguage.Text == "EN")
+            {
+                ChangeLanguage("en");
+            }
         }
+
+        private void ChangeLanguage(string lang)
+        {
+            CultureInfo c = new CultureInfo(lang);
+            Thread.CurrentThread.CurrentCulture = c;
+            Thread.CurrentThread.CurrentUICulture = c;
+            Controls.Clear();
+            timerFigures.Stop();
+
+            InitializeComponent();
+            lbFigures.DataSource = Figures;
+
+        }
+
+     
     }
 }

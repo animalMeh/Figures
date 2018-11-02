@@ -1,13 +1,15 @@
 ﻿using System;
+using System.Globalization;
 using System.Drawing;
+
 
 namespace Figures.Model
 {
     abstract class Figure :IDisposable
     {
         readonly Random Randomizer = new Random();
-        const string STATE_ACTIVE = "Active";
-        const string STATE_STOPPED = "Stopped";
+        string STATE_ACTIVE = "Active";
+        string STATE_STOPPED = "Stopped";
         private int dX;
         private int dY;
         public int X { get;protected set; }
@@ -33,6 +35,7 @@ namespace Figures.Model
                 FigureColor = p;
             
         }
+      
         abstract public void Draw(Graphics graphics);
 
         public void Move(Point pMax)
@@ -59,6 +62,7 @@ namespace Figures.Model
 
         public override string ToString()
         {
+            
             if (IsStopped)
                 return STATE_STOPPED;
             else return STATE_ACTIVE;
