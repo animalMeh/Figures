@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Drawing;
+using System.Globalization;
 using System.Reflection;
+using Figures.Properties;
 
 namespace Figures.Model
 {
     class Rectangle : Figure
     {
-        static string FIGURE_NAME = "Rectangle";
+        static string FIGURE_NAME = Resources.RectangleFigureName;
         const int DEFAULT_WIDTH = 50;
         const int DEFAULT_HEIGHT = 50;
 
@@ -26,6 +28,12 @@ namespace Figures.Model
         {
             Graphics g = graphics;
             g.DrawRectangle(FigureColor, X, Y, Width, Height);
+        }
+
+        public override void ChangeCulture(CultureInfo c)
+        {
+            base.ChangeCulture(c);
+            FIGURE_NAME = "Прямоугольник";
         }
 
         public override string ToString()

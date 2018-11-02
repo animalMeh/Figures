@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Threading.Tasks;
@@ -95,8 +94,11 @@ namespace Figures
             Thread.CurrentThread.CurrentUICulture = c;
             Controls.Clear();
             timerFigures.Stop();
-
             InitializeComponent();
+            foreach(var fug in Figures)
+            {
+                fug.ChangeCulture(c);
+            }
             lbFigures.DataSource = Figures;
 
         }

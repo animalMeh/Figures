@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Drawing;
+using System.Globalization;
+using Figures.Properties;
 
 namespace Figures.Model
 {
     class Triangle : Figure 
     {
-        static string FIGURE_NAME = "Triangle";
+        static string FIGURE_NAME = Resources.TriangleFigureName;
         const int DEFAULT_SIDE_LENGTH = 50;
         readonly int SideLength;
         static int Counter;
@@ -35,7 +37,11 @@ namespace Figures.Model
             UpdateTriangleSidesCoordinates();
             g.DrawLines(FigureColor ,TriangleSidesCoordinates);
         }
-
+        public override void ChangeCulture(CultureInfo c)
+        {
+            base.ChangeCulture(c);
+            FIGURE_NAME = "Треугольник";
+        }
         public override string ToString()
         {
             return string.Format($"{FIGURE_NAME} #{Name}: {base.ToString()}");

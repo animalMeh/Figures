@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Drawing;
 using System.Globalization;
-using System.Resources;
+using Figures.Properties;
 
 namespace Figures.Model
 {
     class Circle : Figure
     {
-        public static string FIGURE_NAME = "Circle";
+        public static string FIGURE_NAME = Resources.CircleFigureName;
         const int DEFAULT_RADIUS = 25;
         static int Counter;
         readonly int Radius;
@@ -29,7 +29,19 @@ namespace Figures.Model
             g.DrawEllipse(FigureColor, X, Y, Width, Height);
         }
 
-       
+        public override void ChangeCulture(CultureInfo c)
+        {
+            base.ChangeCulture(c);
+            //if(c.Name == "en")
+            //{
+            //    FIGURE_NAME = "Circle";
+            //}
+            //if(c.Name == "ru")
+            //{
+            //    FIGURE_NAME = "Круг";
+            //}
+        }
+
         public override string ToString()
         {               
             return string.Format($"{FIGURE_NAME} #{Name}: {base.ToString()}");

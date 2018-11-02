@@ -60,6 +60,20 @@ namespace Figures.Model
             FigureColor.Dispose();
         }
 
+        public virtual void ChangeCulture(CultureInfo c)
+        {
+            if(c.Name == "en")
+            {
+                STATE_ACTIVE = "Active";
+                STATE_STOPPED = "Stopped";
+            }
+            if(c.Name == "ru")
+            {
+                STATE_ACTIVE = "Активно";
+                STATE_STOPPED = "Остановлено";
+            }
+        }
+
         public override string ToString()
         {
             

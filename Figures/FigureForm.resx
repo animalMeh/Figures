@@ -184,7 +184,7 @@
     <value>Arial Narrow, 8pt</value>
   </data>
   <data name="buttonStop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>962, 12</value>
+    <value>831, 12</value>
   </data>
   <data name="buttonStop.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 96</value>
@@ -295,7 +295,7 @@
     <value>0, 0</value>
   </data>
   <data name="panelOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1083, 116</value>
+    <value>952, 116</value>
   </data>
   <data name="panelOptions.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -322,7 +322,7 @@
     <value>0, 0</value>
   </data>
   <data name="lbFigures.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 428</value>
+    <value>207, 412</value>
   </data>
   <data name="lbFigures.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -346,7 +346,7 @@
     <value>0, 116</value>
   </data>
   <data name="panelListFigures.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 428</value>
+    <value>207, 412</value>
   </data>
   <data name="panelListFigures.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -370,7 +370,7 @@
     <value>0, 0</value>
   </data>
   <data name="pbFigures.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 428</value>
+    <value>745, 412</value>
   </data>
   <data name="pbFigures.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -394,7 +394,7 @@
     <value>207, 116</value>
   </data>
   <data name="panelProcess.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 428</value>
+    <value>745, 412</value>
   </data>
   <data name="panelProcess.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -421,7 +421,7 @@
     <value>9, 20</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1083, 544</value>
+    <value>952, 528</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>600, 500</value>
