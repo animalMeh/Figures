@@ -11,7 +11,7 @@ namespace Figures.Model
         static string FIGURE_NAME = Resources.RectangleFigureName;
         const int DEFAULT_WIDTH = 50;
         const int DEFAULT_HEIGHT = 50;
-
+        
         static int Counter;
 
         public Rectangle(Point MaxCoordinate , int Width  = DEFAULT_WIDTH, int Height = DEFAULT_HEIGHT , Pen pen = null )
@@ -21,7 +21,6 @@ namespace Figures.Model
             this.Width = Width;            
             this.Height = Height;
             Name = Counter.ToString();
-
         }
 
         public override void Draw(Graphics graphics)
@@ -34,12 +33,19 @@ namespace Figures.Model
         {
             base.ChangeCulture(c);
             FIGURE_NAME = Resources.RectangleFigureName;
-
         }
 
         public override string ToString()
         {
-            return string.Format($"{FIGURE_NAME} #{Name}: {base.ToString()}");
+            return string.Format($"{FIGURE_NAME} #{Name}({base.ToString()})");
+        }
+
+        protected override void FigureClashed(ClashEventArgs e)
+        {
+            if(!(e.Second is Rectangle))
+            {
+                base.FigureClashed(e);
+            }
         }
 
     }

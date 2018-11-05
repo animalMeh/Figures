@@ -12,7 +12,6 @@ namespace Figures.Model
         static int Counter;
         readonly int Radius;
         
-
         public Circle(Point MaxCoordinate, int Radius = DEFAULT_RADIUS, Pen pen = null)
             :base( new Point(MaxCoordinate.X-Radius*2 , MaxCoordinate.Y-Radius*2), pen)
         {
@@ -33,13 +32,19 @@ namespace Figures.Model
         {
             base.ChangeCulture(c);
             FIGURE_NAME = Resources.CircleFigureName;
-
-    }
-
-    public override string ToString()
-        {               
-            return string.Format($"{FIGURE_NAME} #{Name}: {base.ToString()}");
         }
 
+        public override string ToString()
+        {               
+            return string.Format($"{FIGURE_NAME} #{Name} ({base.ToString()})");
+        }
+
+        protected override void FigureClashed(ClashEventArgs e)
+        {
+            if (!(e.Second is Circle))
+            {
+                base.FigureClashed(e);
+            }
+        }
     }
 }

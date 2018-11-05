@@ -37,15 +37,24 @@ namespace Figures.Model
             UpdateTriangleSidesCoordinates();
             g.DrawLines(FigureColor ,TriangleSidesCoordinates);
         }
+
         public override void ChangeCulture(CultureInfo c)
         {
             base.ChangeCulture(c);
             FIGURE_NAME = Resources.TriangleFigureName;
-
         }
+
         public override string ToString()
         {
-            return string.Format($"{FIGURE_NAME} #{Name}: {base.ToString()}");
-        }   
+            return string.Format($"{FIGURE_NAME} #{Name}({base.ToString()})");
+        }
+
+        protected override void FigureClashed(ClashEventArgs e)
+        {
+            if (!(e.Second is Triangle))
+            {
+                base.FigureClashed(e);
+            }
+        }
     }
 }

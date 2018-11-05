@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FigureForm));
             this.panelOptions = new System.Windows.Forms.Panel();
+            this.bRemoveCollEvent = new System.Windows.Forms.Button();
+            this.bAddCollEvent = new System.Windows.Forms.Button();
             this.lLanguage = new System.Windows.Forms.Label();
             this.cbLanguage = new System.Windows.Forms.ComboBox();
             this.buttonStop = new System.Windows.Forms.Button();
@@ -51,6 +53,8 @@
             // panelOptions
             // 
             this.panelOptions.BackColor = System.Drawing.Color.RosyBrown;
+            this.panelOptions.Controls.Add(this.bRemoveCollEvent);
+            this.panelOptions.Controls.Add(this.bAddCollEvent);
             this.panelOptions.Controls.Add(this.lLanguage);
             this.panelOptions.Controls.Add(this.cbLanguage);
             this.panelOptions.Controls.Add(this.buttonStop);
@@ -59,6 +63,22 @@
             this.panelOptions.Controls.Add(this.btnTriangle);
             resources.ApplyResources(this.panelOptions, "panelOptions");
             this.panelOptions.Name = "panelOptions";
+            // 
+            // bRemoveCollEvent
+            // 
+            this.bRemoveCollEvent.FlatAppearance.BorderColor = System.Drawing.Color.Aqua;
+            this.bRemoveCollEvent.FlatAppearance.BorderSize = 3;
+            resources.ApplyResources(this.bRemoveCollEvent, "bRemoveCollEvent");
+            this.bRemoveCollEvent.Name = "bRemoveCollEvent";
+            this.bRemoveCollEvent.UseVisualStyleBackColor = true;
+            this.bRemoveCollEvent.Click += new System.EventHandler(this.bRemoveCollEvent_Click);
+            // 
+            // bAddCollEvent
+            // 
+            resources.ApplyResources(this.bAddCollEvent, "bAddCollEvent");
+            this.bAddCollEvent.Name = "bAddCollEvent";
+            this.bAddCollEvent.UseVisualStyleBackColor = true;
+            this.bAddCollEvent.Click += new System.EventHandler(this.bAddCollEvent_Click);
             // 
             // lLanguage
             // 
@@ -181,7 +201,7 @@
         private System.Windows.Forms.Timer timerFigures;
         private System.Windows.Forms.Label lLanguage;
         private System.Windows.Forms.ComboBox cbLanguage;
-
-       
+        private System.Windows.Forms.Button bRemoveCollEvent;
+        private System.Windows.Forms.Button bAddCollEvent;
     }
 }

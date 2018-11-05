@@ -7,8 +7,7 @@ using Figures.Model;
 using System.Resources;
 using System.Threading;
 using System.Globalization;
-
-
+using System.Linq;
 
 namespace Figures
 {
@@ -21,20 +20,21 @@ namespace Figures
         {
            InitializeComponent();
            lbFigures.DataSource = Figures;
-
+          
         }
 
         private void pbFigures_Paint(object sender, PaintEventArgs e)
         {
             Point pbChanged = new Point(pbFigures.Right, pbFigures.Bottom);
+            Figure[] CurrentFigures = (from f in Figures select f).ToArray();
             if (Figures.Count > 0)
             {
                 foreach (var f in Figures)
                 {                   
+                  f.Move(pbChanged , CurrentFigures);                 
                   f.Draw(e.Graphics);
-                  f.Move(pbChanged);                 
                 }
-            }
+            }            
         }
 
         private void btnTriangle_Click(object sender, EventArgs e)
@@ -46,13 +46,13 @@ namespace Figures
         private void btnCircle_Click(object sender, EventArgs e)
         {
             Point pbCurrentMaxCoordinates = new Point(pbFigures.Right, pbFigures.Bottom);
-            Figures.Add(new Circle(pbCurrentMaxCoordinates, pen:new Pen(Color.LightSkyBlue)));
+            Figures.Add(new Circle(pbCurrentMaxCoordinates));
         }
 
         private void btnRectangle_Click(object sender, EventArgs e)
         {
             Point pbCurrentMaxCoordinates = new Point(pbFigures.Right, pbFigures.Bottom);
-            Figures.Add(new Model.Rectangle(pbCurrentMaxCoordinates, pen: new Pen(Color.Red)));
+            Figures.Add(new Model.Rectangle(pbCurrentMaxCoordinates));
 
         }
 
@@ -103,6 +103,27 @@ namespace Figures
 
         }
 
-     
+
+        private void FiguresClashed(object sender , ClashEventArgs e)
+        {
+            Console.WriteLine(e.First + " -> " + e.Second);
+        }
+
+    
+        private void bAddCollEvent_Click(object sender, EventArgs e)
+        {
+            if (Figures.Count != 0)
+            {
+                ((Figure)lbFigures.SelectedItem).FiguresClashed += FiguresClashed;
+            }
+        }
+
+        private void bRemoveCollEvent_Click(object sender, EventArgs e)
+        {
+            if (Figures.Count != 0)
+            {
+                ((Figure)lbFigures.SelectedItem).FiguresClashed -= FiguresClashed;
+            }
+        }
     }
 }
