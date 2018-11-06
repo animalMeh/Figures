@@ -1,11 +1,10 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Globalization;
 using Figures.Properties;
 
 namespace Figures.Model
 {
-    class Circle : Figure
+    public class Circle : Figure
     {
         public static string FigureName = Resources.CircleFigureName;
         const int DEFAULT_RADIUS = 25;

@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Figures.Properties;
+using System;
 using System.Globalization;
 using System.Drawing;
-using Figures.Properties;
 
 namespace Figures.Model
 {
-    abstract class Figure :IDisposable , IIntersectable
+    public abstract class Figure :IDisposable, IIntersectable
     {     
         string StateActive = Resources.STATE_ACTIVE;     
         string StateStopped = Resources.STATE_STOPPED;
@@ -33,20 +33,16 @@ namespace Figures.Model
             }
             X = Randomizer.Randomizer.GetValue(0, MaxCoordinate.X);
             Y = Randomizer.Randomizer.GetValue(0, MaxCoordinate.Y);
+
             if (!(p is null))
+            {
                 FigureColor = p;
-            
+            }
         }
 
         public event EventHandler<ClashEventArgs> FiguresClashed;
 
         abstract public void Draw(Graphics graphics);
-
-        protected virtual void FigureClashed(ClashEventArgs e)
-        {
-            EventHandler<ClashEventArgs> temp = FiguresClashed;
-            temp?.Invoke(this, e);
-        }
 
         public void SimulateFigureClashed(Figure To)
         {
@@ -86,7 +82,8 @@ namespace Figures.Model
               StateActive = Resources.STATE_ACTIVE;
               StateStopped = Resources.STATE_STOPPED;
             }
-            if(c.Name == "ru")
+
+            if (c.Name == "ru")
             {
                StateActive = Resources.STATE_ACTIVE;
                StateStopped = Resources.STATE_STOPPED;
@@ -95,20 +92,35 @@ namespace Figures.Model
 
         public override string ToString()
         {
-            
             if (IsStopped)
+            {
                 return StateStopped;
-            else return StateActive;
+            }
+            else
+            {
+                return StateActive;
+            }
         }
 
         public bool IsIntersect(IIntersectable obj)
         {
             if (X + Width >= obj.X && X <= obj.X + obj.Width && Y + Height >= obj.Y && Y <= obj.Y + obj.Height)
+            {
                 return true;
-            else return false;
+            }
+            else
+            {
+                return false;
+            }
         }
 
-         void ChangeDirection()
+        protected virtual void FigureClashed(ClashEventArgs e)
+        {
+            EventHandler<ClashEventArgs> temp = FiguresClashed;
+            temp?.Invoke(this, e);
+        }
+
+        private void ChangeDirection()
         {
             dX = -dX;
             dY = -dY;
@@ -120,6 +132,5 @@ namespace Figures.Model
         {
             FigureColor.Dispose();
         }
-
     }
 }

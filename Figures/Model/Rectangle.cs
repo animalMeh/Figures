@@ -1,18 +1,15 @@
-﻿using System;
+﻿using Figures.Properties;
 using System.Drawing;
 using System.Globalization;
-using System.Reflection;
-using Figures.Properties;
 
 namespace Figures.Model
 {
-    class Rectangle : Figure
+    public class Rectangle : Figure
     {
+        static int Counter;
         static string FigureName = Resources.RectangleFigureName;
         const int DEFAULT_WIDTH = 50;
-        const int DEFAULT_HEIGHT = 50;
-        
-        static int Counter;
+        const int DEFAULT_HEIGHT = 50;    
 
         public Rectangle(Point MaxCoordinate , int Width  = DEFAULT_WIDTH, int Height = DEFAULT_HEIGHT , Pen pen = null )
             :base(new Point(MaxCoordinate.X -Width , MaxCoordinate.Y - Height) , pen)
@@ -47,6 +44,5 @@ namespace Figures.Model
                 base.FigureClashed(e);
             }
         }
-
     }
 }
