@@ -7,7 +7,7 @@ namespace Figures.Model
 {
     class Triangle : Figure 
     {
-        static string FIGURE_NAME = Resources.TriangleFigureName;
+        static string FigureName = Resources.TriangleFigureName;
         const int DEFAULT_SIDE_LENGTH = 50;
         readonly int SideLength;
         static int Counter;
@@ -41,12 +41,12 @@ namespace Figures.Model
         public override void ChangeCulture(CultureInfo c)
         {
             base.ChangeCulture(c);
-            FIGURE_NAME = Resources.TriangleFigureName;
+            FigureName = Resources.TriangleFigureName;
         }
 
         public override string ToString()
         {
-            return string.Format($"{FIGURE_NAME} #{Name}({base.ToString()})");
+            return string.Format($"{FigureName} #{Name}({base.ToString()})");
         }
 
         protected override void FigureClashed(ClashEventArgs e)

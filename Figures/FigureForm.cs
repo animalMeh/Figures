@@ -1,13 +1,11 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Figures.Model;
-using System.Resources;
-using System.Threading;
 using System.Globalization;
 using System.Linq;
+using Figures.Model;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace Figures
 {

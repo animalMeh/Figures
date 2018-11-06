@@ -8,7 +8,7 @@ namespace Figures.Model
 {
     class Rectangle : Figure
     {
-        static string FIGURE_NAME = Resources.RectangleFigureName;
+        static string FigureName = Resources.RectangleFigureName;
         const int DEFAULT_WIDTH = 50;
         const int DEFAULT_HEIGHT = 50;
         
@@ -32,12 +32,12 @@ namespace Figures.Model
         public override void ChangeCulture(CultureInfo c)
         {
             base.ChangeCulture(c);
-            FIGURE_NAME = Resources.RectangleFigureName;
+            FigureName = Resources.RectangleFigureName;
         }
 
         public override string ToString()
         {
-            return string.Format($"{FIGURE_NAME} #{Name}({base.ToString()})");
+            return string.Format($"{FigureName} #{Name}({base.ToString()})");
         }
 
         protected override void FigureClashed(ClashEventArgs e)

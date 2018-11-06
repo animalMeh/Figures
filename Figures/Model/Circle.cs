@@ -7,7 +7,7 @@ namespace Figures.Model
 {
     class Circle : Figure
     {
-        public static string FIGURE_NAME = Resources.CircleFigureName;
+        public static string FigureName = Resources.CircleFigureName;
         const int DEFAULT_RADIUS = 25;
         static int Counter;
         readonly int Radius;
@@ -31,12 +31,12 @@ namespace Figures.Model
         public override void ChangeCulture(CultureInfo c)
         {
             base.ChangeCulture(c);
-            FIGURE_NAME = Resources.CircleFigureName;
+            FigureName = Resources.CircleFigureName;
         }
 
         public override string ToString()
         {               
-            return string.Format($"{FIGURE_NAME} #{Name} ({base.ToString()})");
+            return string.Format($"{FigureName} #{Name} ({base.ToString()})");
         }
 
         protected override void FigureClashed(ClashEventArgs e)

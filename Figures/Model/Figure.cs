@@ -6,10 +6,9 @@ using Figures.Properties;
 namespace Figures.Model
 {
     abstract class Figure :IDisposable , IIntersectable
-    {
-     
-        string STATE_ACTIVE = Resources.STATE_ACTIVE;     
-        string STATE_STOPPED = Resources.STATE_STOPPED;
+    {     
+        string StateActive = Resources.STATE_ACTIVE;     
+        string StateStopped = Resources.STATE_STOPPED;
 
         private int dX;
         private int dY;
@@ -25,20 +24,6 @@ namespace Figures.Model
         public string Name { get;protected set; }
         public bool IsStopped { get; set; }
 
-        public event EventHandler<ClashEventArgs> FiguresClashed;
-
-        protected virtual void FigureClashed(ClashEventArgs e)
-        {
-            EventHandler<ClashEventArgs> temp = FiguresClashed;
-            temp?.Invoke(this, e);
-        }
-
-        public void SimulateFigureClashed(Figure To)
-        {
-            ClashEventArgs cea = new ClashEventArgs(this, To);
-            FigureClashed(cea);
-        }
-
         protected Figure(Point MaxCoordinate, Pen p = null)
         {
             while (dX == 0 || dY == 0)
@@ -52,19 +37,35 @@ namespace Figures.Model
                 FigureColor = p;
             
         }
-      
+
+        public event EventHandler<ClashEventArgs> FiguresClashed;
+
         abstract public void Draw(Graphics graphics);
 
-        public void Move(Point pMax , IIntersectable [] otherFigures)
+        protected virtual void FigureClashed(ClashEventArgs e)
+        {
+            EventHandler<ClashEventArgs> temp = FiguresClashed;
+            temp?.Invoke(this, e);
+        }
+
+        public void SimulateFigureClashed(Figure To)
+        {
+            ClashEventArgs cea = new ClashEventArgs(this, To);
+            FigureClashed(cea);
+        }
+
+        public void Move(Point pMax , IIntersectable[] otherFigures)
         {          
             if(otherFigures.Length > 1)
             {
+                ////
                 for (int i = 0; i < otherFigures.Length; i++)
                     if (IsIntersect(otherFigures[i])&& this != otherFigures[i])
                     {
                         ChangeDirection();
                         SimulateFigureClashed((Figure)otherFigures[i]);
                     }
+                ////
             }
 
             if (!IsStopped)
@@ -77,23 +78,18 @@ namespace Figures.Model
                 Y += dY;        
             }
         }
-
-        public void Dispose()
-        {
-            FigureColor.Dispose();
-        }
-
+        
         public virtual void ChangeCulture(CultureInfo c)
         {
             if(c.Name == "en")
             {
-              STATE_ACTIVE = Resources.STATE_ACTIVE;
-              STATE_STOPPED = Resources.STATE_STOPPED;
+              StateActive = Resources.STATE_ACTIVE;
+              StateStopped = Resources.STATE_STOPPED;
             }
             if(c.Name == "ru")
             {
-               STATE_ACTIVE = Resources.STATE_ACTIVE;
-               STATE_STOPPED = Resources.STATE_STOPPED;
+               StateActive = Resources.STATE_ACTIVE;
+               StateStopped = Resources.STATE_STOPPED;
             }
         }
 
@@ -101,8 +97,8 @@ namespace Figures.Model
         {
             
             if (IsStopped)
-                return STATE_STOPPED;
-            else return STATE_ACTIVE;
+                return StateStopped;
+            else return StateActive;
         }
 
         public bool IsIntersect(IIntersectable obj)
@@ -112,12 +108,17 @@ namespace Figures.Model
             else return false;
         }
 
-        public void ChangeDirection()
+         void ChangeDirection()
         {
             dX = -dX;
             dY = -dY;
             X += dX;
             Y += dY;
+        }
+
+        public void Dispose()
+        {
+            FigureColor.Dispose();
         }
 
     }
