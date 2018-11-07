@@ -118,25 +118,70 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="bRemoveCollEvent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>631, 46</value>
+  </data>
+  <data name="bAddCollEvent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>570, 46</value>
+  </data>
   <data name="lLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>164, 25</value>
   </data>
   <data name="lLanguage.Text" xml:space="preserve">
     <value>Изменить язык</value>
   </data>
+  <data name="buttonStop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>874, 46</value>
+  </data>
+  <data name="buttonStop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 62</value>
+  </data>
   <data name="buttonStop.Text" xml:space="preserve">
     <value>Стоп</value>
   </data>
+  <data name="btnRectangle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 38</value>
+  </data>
   <data name="btnRectangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 96</value>
+    <value>124, 72</value>
   </data>
   <data name="btnRectangle.Text" xml:space="preserve">
     <value>Прямоугольник</value>
   </data>
+  <data name="btnCircle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>338, 38</value>
+  </data>
   <data name="btnCircle.Text" xml:space="preserve">
     <value>Круг</value>
   </data>
+  <data name="btnTriangle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 38</value>
+  </data>
+  <data name="btnTriangle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 73</value>
+  </data>
   <data name="btnTriangle.Text" xml:space="preserve">
     <value>Треугольник</value>
+  </data>
+  <data name="xMLToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 30</value>
+  </data>
+  <data name="kSONToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 30</value>
+  </data>
+  <data name="bINToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 30</value>
+  </data>
+  <data name="fileToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 29</value>
+  </data>
+  <data name="fileToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 29</value>
+  </data>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>Открыть</value>
   </data>
 </root>

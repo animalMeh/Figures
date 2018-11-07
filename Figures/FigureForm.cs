@@ -6,12 +6,18 @@ using System.Linq;
 using Figures.Model;
 using System.Threading;
 using System.Windows.Forms;
+using System.IO;
+using System.Xml.Serialization;
+using System.Text.RegularExpressions;
+
 
 namespace Figures
 {
     public partial class FigureForm : Form
     {
         private BindingList<Figure> figures = new BindingList<Figure>();
+        Point pbMaxCoordinate = new Point();
+
         public FigureForm()
         {
            InitializeComponent();
@@ -20,39 +26,39 @@ namespace Figures
 
         private void pbFigures_Paint(object sender, PaintEventArgs e)
         {
-            Point pbChanged = new Point(pbFigures.Right, pbFigures.Bottom);
+            pbMaxCoordinate = new Point(pbFigures.Right, pbFigures.Bottom);//
             Figure[] currentFigures = (from f in figures select f).ToArray();
             if (figures.Count > 0)
             {
                 foreach (var f in figures)
-                {                   
-                  f.Move(pbChanged , currentFigures);                 
-                  f.Draw(e.Graphics);
+                {
+                    MovingHelper.AsyncMove(f, pbMaxCoordinate, currentFigures);      
+                    f.Draw(e.Graphics);
                 }
             }
         }
 
         private void btnTriangle_Click(object sender, EventArgs e)
         {
-            Point pbCurrentMaxCoordinates = new Point(pbFigures.Right, pbFigures.Bottom);
-            figures.Add(new Triangle(pbCurrentMaxCoordinates));
+            pbMaxCoordinate = new Point(pbFigures.Right, pbFigures.Bottom);
+            figures.Add(new Triangle(pbMaxCoordinate));
         }
 
         private void btnCircle_Click(object sender, EventArgs e)
         {
-            Point pbCurrentMaxCoordinates = new Point(pbFigures.Right, pbFigures.Bottom);
-            figures.Add(new Circle(pbCurrentMaxCoordinates));
+            pbMaxCoordinate = new Point(pbFigures.Right, pbFigures.Bottom);
+            figures.Add(new Circle(pbMaxCoordinate));
         }
 
         private void btnRectangle_Click(object sender, EventArgs e)
         {
-            Point pbCurrentMaxCoordinates = new Point(pbFigures.Right, pbFigures.Bottom);
-            figures.Add(new Model.Rectangle(pbCurrentMaxCoordinates));
+            pbMaxCoordinate = new Point(pbFigures.Right, pbFigures.Bottom);
+            figures.Add(new Model.Rectangle(pbMaxCoordinate));
         }
 
         private void timerFigures_Tick(object sender, EventArgs e)
         {
-            pbFigures.Refresh();
+            pbFigures.Invalidate();
         }
 
         private void btnStop_Click(object sender, EventArgs e)
@@ -109,7 +115,7 @@ namespace Figures
         {
             if (figures.Count != 0)
             {
-                ((Figure)lbFigures.SelectedItem).FiguresClashed += FiguresClashed;
+                ((Figure)lbFigures.SelectedItem).FigureClash += FiguresClashed;
             }
         }
 
@@ -117,8 +123,57 @@ namespace Figures
         {
             if (figures.Count != 0)
             {
-                ((Figure)lbFigures.SelectedItem).FiguresClashed -= FiguresClashed;
+                ((Figure)lbFigures.SelectedItem).FigureClash -= FiguresClashed;
             }
+        }
+
+        private void xMLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Figure[] fig = figures.ToArray();
+            XmlSerializer formatter = new XmlSerializer(typeof(Figure[]));
+            using (FileStream fs = new FileStream("figuress.xml", FileMode.Create))
+            {
+                formatter.Serialize(fs, fig);
+                Console.WriteLine("Объект сериализован");
+            }
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openSerializedFile.ShowDialog();
+            string readFile = openSerializedFile.FileName;
+            IsFileCanBeDeserialized(readFile, out string myFile);
+            XmlSerializer formatter = new XmlSerializer(typeof(Figure[]));
+            switch (myFile)
+            {
+                case "xml":
+                    {
+                        using (FileStream fs = new FileStream(readFile, FileMode.Open))
+                        {
+                            Figure[] newFigures = (Figure[])formatter.Deserialize(fs);
+                            figures.Clear();
+                            foreach(var f in newFigures)
+                            {
+                                figures.Add(f);
+                            }
+                            lbFigures.DataSource = figures;
+                        }
+                        break;
+                    }
+            }
+        }
+
+        private bool IsFileCanBeDeserialized(string fileName, out string Type)
+        {
+            var pattern = @"\.xml$|\.json$|\.dat$";
+            if (fileName.EndsWith(".xml"))
+                Type = "xml";
+            else if (fileName.EndsWith(".json"))
+                Type = "json";
+            else if (fileName.EndsWith(".dat"))
+                Type = "bin";
+            else Type =  "";
+            return Regex.IsMatch(fileName, pattern);
         }
     }
 }

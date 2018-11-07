@@ -2,17 +2,21 @@
 using System;
 using System.Drawing;
 using System.Globalization;
+using System.Xml.Serialization;
 
 namespace Figures.Model
 {
+    [Serializable, XmlInclude(typeof(Figure))]
     public class Triangle : Figure 
     {
         static string FigureName = Resources.TriangleFigureName;
         const int DEFAULT_SIDE_LENGTH = 50;
         readonly int SideLength;
         static int Counter;
-        readonly Point[] triangleSidesCoordinates;
-      
+        readonly Point[] triangleSidesCoordinates = new Point[4] { new Point(), new Point(), new Point() , new Point() };
+
+        public Triangle():base() { }
+
         public Triangle(Point MaxCoordinate, int sideLength  = DEFAULT_SIDE_LENGTH, Pen pen = null) 
             :base(new Point(MaxCoordinate.X - sideLength , MaxCoordinate.Y - sideLength), pen)
         {
@@ -42,11 +46,11 @@ namespace Figures.Model
             return string.Format($"{FigureName} #{Name}({base.ToString()})");
         }
 
-        protected override void FigureClashed(ClashEventArgs e)
+        protected override void Clash(ClashEventArgs e)
         {
             if (!(e.Second is Triangle))
             {
-                base.FigureClashed(e);
+                base.Clash(e);
             }
         }
 

@@ -67,6 +67,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization.Json" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -89,6 +90,7 @@
     <Compile Include="Model\IIntersectable.cs" />
     <Compile Include="Model\Rectangle.cs" />
     <Compile Include="Model\Triangle.cs" />
+    <Compile Include="MovingHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FigureForm.resx">

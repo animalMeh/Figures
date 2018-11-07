@@ -117,18 +117,153 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>180, 17</value>
+  </metadata>
+  <data name="&gt;&gt;bRemoveCollEvent.Name" xml:space="preserve">
+    <value>bRemoveCollEvent</value>
+  </data>
+  <data name="&gt;&gt;bRemoveCollEvent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bRemoveCollEvent.Parent" xml:space="preserve">
+    <value>panelOptions</value>
+  </data>
+  <data name="&gt;&gt;bRemoveCollEvent.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;bAddCollEvent.Name" xml:space="preserve">
+    <value>bAddCollEvent</value>
+  </data>
+  <data name="&gt;&gt;bAddCollEvent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bAddCollEvent.Parent" xml:space="preserve">
+    <value>panelOptions</value>
+  </data>
+  <data name="&gt;&gt;bAddCollEvent.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lLanguage.Name" xml:space="preserve">
+    <value>lLanguage</value>
+  </data>
+  <data name="&gt;&gt;lLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lLanguage.Parent" xml:space="preserve">
+    <value>panelOptions</value>
+  </data>
+  <data name="&gt;&gt;lLanguage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cbLanguage.Name" xml:space="preserve">
+    <value>cbLanguage</value>
+  </data>
+  <data name="&gt;&gt;cbLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbLanguage.Parent" xml:space="preserve">
+    <value>panelOptions</value>
+  </data>
+  <data name="&gt;&gt;cbLanguage.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;buttonStop.Name" xml:space="preserve">
+    <value>buttonStop</value>
+  </data>
+  <data name="&gt;&gt;buttonStop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonStop.Parent" xml:space="preserve">
+    <value>panelOptions</value>
+  </data>
+  <data name="&gt;&gt;buttonStop.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;btnRectangle.Name" xml:space="preserve">
+    <value>btnRectangle</value>
+  </data>
+  <data name="&gt;&gt;btnRectangle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRectangle.Parent" xml:space="preserve">
+    <value>panelOptions</value>
+  </data>
+  <data name="&gt;&gt;btnRectangle.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;btnCircle.Name" xml:space="preserve">
+    <value>btnCircle</value>
+  </data>
+  <data name="&gt;&gt;btnCircle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCircle.Parent" xml:space="preserve">
+    <value>panelOptions</value>
+  </data>
+  <data name="&gt;&gt;btnCircle.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;btnTriangle.Name" xml:space="preserve">
+    <value>btnTriangle</value>
+  </data>
+  <data name="&gt;&gt;btnTriangle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTriangle.Parent" xml:space="preserve">
+    <value>panelOptions</value>
+  </data>
+  <data name="&gt;&gt;btnTriangle.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>panelOptions</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="panelOptions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="panelOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panelOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>952, 116</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="panelOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panelOptions.Name" xml:space="preserve">
+    <value>panelOptions</value>
+  </data>
+  <data name="&gt;&gt;panelOptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelOptions.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panelOptions.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="bRemoveCollEvent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="bRemoveCollEvent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>726, 35</value>
+    <value>612, 49</value>
   </data>
   <data name="bRemoveCollEvent.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 50</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="bRemoveCollEvent.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
@@ -148,7 +283,7 @@
     <value>0</value>
   </data>
   <data name="bAddCollEvent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>649, 35</value>
+    <value>551, 49</value>
   </data>
   <data name="bAddCollEvent.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 50</value>
@@ -178,7 +313,7 @@
     <value>Arial, 11pt</value>
   </data>
   <data name="lLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 26</value>
+    <value>7, 46</value>
   </data>
   <data name="lLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 25</value>
@@ -208,7 +343,7 @@
     <value>EN</value>
   </data>
   <data name="cbLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 70</value>
+    <value>12, 80</value>
   </data>
   <data name="cbLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 28</value>
@@ -235,10 +370,10 @@
     <value>Arial Narrow, 8pt</value>
   </data>
   <data name="buttonStop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>831, 12</value>
+    <value>861, 40</value>
   </data>
   <data name="buttonStop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 96</value>
+    <value>79, 73</value>
   </data>
   <data name="buttonStop.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -262,10 +397,10 @@
     <value>Arial Narrow, 8pt</value>
   </data>
   <data name="btnRectangle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>481, 12</value>
+    <value>440, 40</value>
   </data>
   <data name="btnRectangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 96</value>
+    <value>89, 73</value>
   </data>
   <data name="btnRectangle.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -289,10 +424,10 @@
     <value>Arial Narrow, 8pt</value>
   </data>
   <data name="btnCircle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>345, 12</value>
+    <value>358, 40</value>
   </data>
   <data name="btnCircle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 96</value>
+    <value>76, 73</value>
   </data>
   <data name="btnCircle.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -316,10 +451,10 @@
     <value>Arial Narrow, 8pt</value>
   </data>
   <data name="btnTriangle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 12</value>
+    <value>261, 40</value>
   </data>
   <data name="btnTriangle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 96</value>
+    <value>91, 73</value>
   </data>
   <data name="btnTriangle.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -339,44 +474,65 @@
   <data name="&gt;&gt;btnTriangle.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="panelOptions.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>180, 17</value>
+  </metadata>
+  <data name="menuStrip1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Narrow, 10pt</value>
   </data>
-  <data name="panelOptions.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="panelOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>952, 116</value>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>952, 32</value>
   </data>
-  <data name="panelOptions.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="&gt;&gt;panelOptions.Name" xml:space="preserve">
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
     <value>panelOptions</value>
   </data>
-  <data name="&gt;&gt;panelOptions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
-  <data name="&gt;&gt;panelOptions.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="fileToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 28</value>
   </data>
-  <data name="&gt;&gt;panelOptions.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="fileToolStripMenuItem1.Text" xml:space="preserve">
+    <value>File</value>
   </data>
-  <data name="lbFigures.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="xMLToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>252, 30</value>
   </data>
-  <data name="lbFigures.ItemHeight" type="System.Int32, mscorlib">
-    <value>20</value>
+  <data name="xMLToolStripMenuItem.Text" xml:space="preserve">
+    <value>XML</value>
   </data>
-  <data name="lbFigures.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="kSONToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>252, 30</value>
   </data>
-  <data name="lbFigures.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 412</value>
+  <data name="kSONToolStripMenuItem.Text" xml:space="preserve">
+    <value>JSON</value>
   </data>
-  <data name="lbFigures.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="bINToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>252, 30</value>
+  </data>
+  <data name="bINToolStripMenuItem.Text" xml:space="preserve">
+    <value>BIN</value>
+  </data>
+  <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 28</value>
+  </data>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open</value>
   </data>
   <data name="&gt;&gt;lbFigures.Name" xml:space="preserve">
     <value>lbFigures</value>
@@ -414,16 +570,31 @@
   <data name="&gt;&gt;panelListFigures.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="pbFigures.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="lbFigures.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="pbFigures.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lbFigures.ItemHeight" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="lbFigures.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="pbFigures.Size" type="System.Drawing.Size, System.Drawing">
-    <value>745, 412</value>
+  <data name="lbFigures.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 412</value>
   </data>
-  <data name="pbFigures.TabIndex" type="System.Int32, mscorlib">
+  <data name="lbFigures.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lbFigures.Name" xml:space="preserve">
+    <value>lbFigures</value>
+  </data>
+  <data name="&gt;&gt;lbFigures.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbFigures.Parent" xml:space="preserve">
+    <value>panelListFigures</value>
+  </data>
+  <data name="&gt;&gt;lbFigures.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;pbFigures.Name" xml:space="preserve">
@@ -462,8 +633,35 @@
   <data name="&gt;&gt;panelProcess.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="pbFigures.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="pbFigures.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pbFigures.Size" type="System.Drawing.Size, System.Drawing">
+    <value>745, 412</value>
+  </data>
+  <data name="pbFigures.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pbFigures.Name" xml:space="preserve">
+    <value>pbFigures</value>
+  </data>
+  <data name="&gt;&gt;pbFigures.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbFigures.Parent" xml:space="preserve">
+    <value>panelProcess</value>
+  </data>
+  <data name="&gt;&gt;pbFigures.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="timerFigures.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="openSerializedFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>336, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -480,11 +678,47 @@
   <data name="$this.Text" xml:space="preserve">
     <value>FigureForm</value>
   </data>
+  <data name="&gt;&gt;fileToolStripMenuItem1.Name" xml:space="preserve">
+    <value>fileToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;fileToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;xMLToolStripMenuItem.Name" xml:space="preserve">
+    <value>xMLToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;xMLToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;kSONToolStripMenuItem.Name" xml:space="preserve">
+    <value>kSONToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;kSONToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bINToolStripMenuItem.Name" xml:space="preserve">
+    <value>bINToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;bINToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openToolStripMenuItem.Name" xml:space="preserve">
+    <value>openToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;openToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;timerFigures.Name" xml:space="preserve">
     <value>timerFigures</value>
   </data>
   <data name="&gt;&gt;timerFigures.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openSerializedFile.Name" xml:space="preserve">
+    <value>openSerializedFile</value>
+  </data>
+  <data name="&gt;&gt;openSerializedFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FigureForm</value>

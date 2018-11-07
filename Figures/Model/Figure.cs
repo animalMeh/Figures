@@ -2,30 +2,43 @@
 using System;
 using System.Globalization;
 using System.Drawing;
+using System.Xml.Serialization;
+using System.IO;
+using System.Runtime.Serialization;
+
 
 namespace Figures.Model
 {
+    
+    [Serializable, XmlInclude(typeof(Triangle)) , XmlInclude(typeof(Circle)) , XmlInclude(typeof(Rectangle))]
     public abstract class Figure :IDisposable, IIntersectable
     {     
         string StateActive = Resources.STATE_ACTIVE;     
         string StateStopped = Resources.STATE_STOPPED;
 
-        private int dX;
-        private int dY;
+        public int dX;
+        public int dY;
 
-        public int X { get;protected set; }
-        public int Y { get;protected set; }      
+        public int X { get;set; }
+        public int Y { get;set; }      
 
         protected Pen FigureColor = new Pen(Randomizer.Randomizer.GetColor()); 
 
-        public int Height { get;protected set; }
-        public int Width { get; protected set; }
+        public int Height { get;set; }
+        public int Width { get;set; }
 
-        public string Name { get;protected set; }
+        public string Name { get;set; }
         public bool IsStopped { get; set; }
+
+        public event EventHandler<ClashEventArgs> FigureClash;
+
+        abstract public void Draw(Graphics graphics);
+
+        public Figure(){ }
 
         protected Figure(Point MaxCoordinate, Pen p = null)
         {
+            
             while (dX == 0 || dY == 0)
             {
                 dX = Randomizer.Randomizer.GetValue(-4, 4);
@@ -40,39 +53,22 @@ namespace Figures.Model
             }
         }
 
-        public event EventHandler<ClashEventArgs> FiguresClashed;
+        public void Move(Point pMax , IIntersectable[] otherFigures)
+        {
+            if (!IsStopped)
+                PreventCrossingTheBorder(pMax);
+            MoveInClashing(otherFigures);
+        }
 
-        abstract public void Draw(Graphics graphics);
+        public bool IsIntersect(IIntersectable obj)
+        {
+            return X + Width >= obj.X && X <= obj.X + obj.Width && Y + Height >= obj.Y && Y <= obj.Y + obj.Height;
+        }
 
         public void SimulateFigureClashed(Figure To)
         {
             ClashEventArgs cea = new ClashEventArgs(this, To);
-            FigureClashed(cea);
-        }
-
-        public void Move(Point pMax , IIntersectable[] otherFigures)
-        {          
-            if(otherFigures.Length > 1)
-            {
-                ////
-                for (int i = 0; i < otherFigures.Length; i++)
-                    if (IsIntersect(otherFigures[i])&& this != otherFigures[i])
-                    {
-                        ChangeDirection();
-                        SimulateFigureClashed((Figure)otherFigures[i]);
-                    }
-                ////
-            }
-
-            if (!IsStopped)
-            {
-                if (Y <= 0 || Y + Height >= pMax.Y)
-                    dY = -dY;
-                if (X + Width >= pMax.X || X <= 0)
-                    dX = -dX;
-                X += dX;
-                Y += dY;        
-            }
+            Clash(cea);
         }
         
         public virtual void ChangeCulture(CultureInfo c)
@@ -102,22 +98,38 @@ namespace Figures.Model
             }
         }
 
-        public bool IsIntersect(IIntersectable obj)
+        protected virtual void Clash(ClashEventArgs e)
         {
-            if (X + Width >= obj.X && X <= obj.X + obj.Width && Y + Height >= obj.Y && Y <= obj.Y + obj.Height)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            EventHandler<ClashEventArgs> temp = FigureClash;
+            temp?.Invoke(this, e);
         }
 
-        protected virtual void FigureClashed(ClashEventArgs e)
+        private void PreventCrossingTheBorder(Point pMax)
         {
-            EventHandler<ClashEventArgs> temp = FiguresClashed;
-            temp?.Invoke(this, e);
+            if (Y <= 0 || Y + Height >= pMax.Y)
+                dY = -dY;
+            if (X + Width >= pMax.X || X <= 0)
+                dX = -dX;
+            X += dX;
+            Y += dY;
+        }
+
+        private void MoveInClashing(IIntersectable[] otherFigures)
+        {
+            if(otherFigures.Length > 1)
+            {
+                foreach (var f in otherFigures)
+                {
+                    if (IsIntersect(f) && this != f)
+                    {
+                       ChangeDirection();
+                       if (IsIntersect(f))
+                            ChangeDirection();
+                       else
+                            SimulateFigureClashed((Figure)f);
+                    }
+                }
+            }
         }
 
         private void ChangeDirection()
