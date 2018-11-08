@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Xml.Serialization;
 using System.Text.RegularExpressions;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization.Json;
 
 
 namespace Figures
@@ -128,13 +130,29 @@ namespace Figures
         }
 
         private void xMLToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Figure[] fig = figures.ToArray();
+        { 
             XmlSerializer formatter = new XmlSerializer(typeof(Figure[]));
             using (FileStream fs = new FileStream("figuress.xml", FileMode.Create))
             {
-                formatter.Serialize(fs, fig);
-                Console.WriteLine("Объект сериализован");
+                formatter.Serialize(fs, figures.ToArray());
+            }
+        }
+
+        private void kSONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(Figure[]));
+            using (FileStream fs = new FileStream("figures.json", FileMode.Create))
+            {
+                jsonFormatter.WriteObject(fs, figures.ToArray());
+            }
+        }
+
+        private void bINToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            using (FileStream fs = new FileStream("figures.dat", FileMode.Create))
+            {
+                bf.Serialize(fs, figures.ToArray());
             }
         }
 
@@ -142,25 +160,102 @@ namespace Figures
         {
             openSerializedFile.ShowDialog();
             string readFile = openSerializedFile.FileName;
-            IsFileCanBeDeserialized(readFile, out string myFile);
-            XmlSerializer formatter = new XmlSerializer(typeof(Figure[]));
-            switch (myFile)
+            if (IsFileCanBeDeserialized(readFile, out string myRes))
+            {
+                ShowSerealizedFile(myRes, readFile);
+            }
+            else
+            {
+                MessageBox.Show("This file can't be deserialized");
+            }
+        }
+
+        void ShowSerealizedFile(string FileRes, string FileName)
+        {
+            switch (FileRes)
             {
                 case "xml":
                     {
-                        using (FileStream fs = new FileStream(readFile, FileMode.Open))
-                        {
-                            Figure[] newFigures = (Figure[])formatter.Deserialize(fs);
-                            figures.Clear();
-                            foreach(var f in newFigures)
-                            {
-                                figures.Add(f);
-                            }
-                            lbFigures.DataSource = figures;
-                        }
+                        DeserializeXML(FileName);
+                        break;
+                    }
+                case "json":
+                    {
+                        DeserializeJson(FileName);
+                        break;
+                    }
+                case "bin":
+                    {
+                        DeserializeBinaryFile(FileName);
                         break;
                     }
             }
+        }
+
+        private void DeserializeXML(string FileName)
+        {
+            XmlSerializer formatter = new XmlSerializer(typeof(Figure[]));
+            using (FileStream fs = new FileStream(FileName, FileMode.Open))
+            {
+                try
+                {
+                    Figure[] newFigures = (Figure[])formatter.Deserialize(fs);
+                    figures.Clear();
+                    foreach (var f in newFigures)
+                    {
+                        figures.Add(f);
+                    }
+                    lbFigures.DataSource = figures;
+                }
+                catch(Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+        }
+
+        private void DeserializeJson(string FileName)
+        {
+            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(Figure[]));
+            using (FileStream fs = new FileStream(FileName, FileMode.Open))
+            {
+                try
+                {
+                    Figure[] newFigures = (Figure[])jsonFormatter.ReadObject(fs);
+                    figures.Clear();
+                    foreach (var f in newFigures)
+                    {
+                        figures.Add(f);
+                    }
+                    lbFigures.DataSource = figures;
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+        }
+        }
+
+        private void DeserializeBinaryFile(string FileName)
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            using (FileStream fs = new FileStream(FileName, FileMode.Open))
+            {
+                try
+                {
+                    Figure[] newFigures = (Figure[])bf.Deserialize(fs);
+                    figures.Clear();
+                    foreach (var f in newFigures)
+                    {
+                        figures.Add(f);
+                    }
+                    lbFigures.DataSource = figures;
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+        }
         }
 
         private bool IsFileCanBeDeserialized(string fileName, out string Type)
@@ -175,5 +270,6 @@ namespace Figures
             else Type =  "";
             return Regex.IsMatch(fileName, pattern);
         }
+
     }
 }

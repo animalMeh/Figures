@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 
 namespace Figures.Model
 {
-    [Serializable,XmlInclude(typeof(Figure))]
+    [Serializable]
     public class Rectangle : Figure
     {
         static int Counter;
@@ -17,7 +17,7 @@ namespace Figures.Model
         
         public Rectangle():base() { }
 
-        public Rectangle(Point MaxCoordinate , int Width  = DEFAULT_WIDTH, int Height = DEFAULT_HEIGHT , Pen pen = null )
+        public Rectangle(Point MaxCoordinate , int Width  = DEFAULT_WIDTH, int Height = DEFAULT_HEIGHT , Color? pen = null )
             :base(new Point(MaxCoordinate.X -Width , MaxCoordinate.Y - Height) , pen)
         {
             Counter++;

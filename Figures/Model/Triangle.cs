@@ -3,10 +3,11 @@ using System;
 using System.Drawing;
 using System.Globalization;
 using System.Xml.Serialization;
+using System.Runtime.Serialization;
 
 namespace Figures.Model
 {
-    [Serializable, XmlInclude(typeof(Figure))]
+    [Serializable]
     public class Triangle : Figure 
     {
         static string FigureName = Resources.TriangleFigureName;
@@ -17,7 +18,7 @@ namespace Figures.Model
 
         public Triangle():base() { }
 
-        public Triangle(Point MaxCoordinate, int sideLength  = DEFAULT_SIDE_LENGTH, Pen pen = null) 
+        public Triangle(Point MaxCoordinate, int sideLength  = DEFAULT_SIDE_LENGTH, Color? pen = null) 
             :base(new Point(MaxCoordinate.X - sideLength , MaxCoordinate.Y - sideLength), pen)
         {
             Counter++;

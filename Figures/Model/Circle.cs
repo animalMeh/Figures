@@ -3,10 +3,11 @@ using System.Drawing;
 using System.Globalization;
 using Figures.Properties;
 using System.Xml.Serialization;
+using System.Runtime.Serialization;
 
 namespace Figures.Model
 {
-    [Serializable, XmlInclude(typeof(Figure))]
+    [Serializable]
     public class Circle : Figure
     {
         public static string FigureName = Resources.CircleFigureName;
@@ -16,7 +17,7 @@ namespace Figures.Model
         
         public Circle():base() { }
 
-        public Circle(Point MaxCoordinate, int Radius = DEFAULT_RADIUS, Pen pen = null)
+        public Circle(Point MaxCoordinate, int Radius = DEFAULT_RADIUS, Color? pen = null)
             :base( new Point(MaxCoordinate.X-Radius*2 , MaxCoordinate.Y-Radius*2), pen)
         {
             Counter++;

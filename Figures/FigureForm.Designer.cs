@@ -185,12 +185,14 @@
             this.kSONToolStripMenuItem.BackColor = System.Drawing.Color.Bisque;
             this.kSONToolStripMenuItem.Name = "kSONToolStripMenuItem";
             resources.ApplyResources(this.kSONToolStripMenuItem, "kSONToolStripMenuItem");
+            this.kSONToolStripMenuItem.Click += new System.EventHandler(this.kSONToolStripMenuItem_Click);
             // 
             // bINToolStripMenuItem
             // 
             this.bINToolStripMenuItem.BackColor = System.Drawing.Color.Bisque;
             this.bINToolStripMenuItem.Name = "bINToolStripMenuItem";
             resources.ApplyResources(this.bINToolStripMenuItem, "bINToolStripMenuItem");
+            this.bINToolStripMenuItem.Click += new System.EventHandler(this.bINToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 

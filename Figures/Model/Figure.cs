@@ -5,29 +5,42 @@ using System.Drawing;
 using System.Xml.Serialization;
 using System.IO;
 using System.Runtime.Serialization;
-
+using System.Runtime.Serialization.Json;
 
 namespace Figures.Model
 {
-    
+    [DataContract, KnownType(typeof(Circle)), KnownType(typeof(Rectangle)), KnownType(typeof(Triangle))]
     [Serializable, XmlInclude(typeof(Triangle)) , XmlInclude(typeof(Circle)) , XmlInclude(typeof(Rectangle))]
     public abstract class Figure :IDisposable, IIntersectable
-    {     
-        string StateActive = Resources.STATE_ACTIVE;     
-        string StateStopped = Resources.STATE_STOPPED;
+    {
+        [XmlIgnore][DataMember]
+        public string StateActive = Resources.STATE_ACTIVE;
+        [XmlIgnore][DataMember]
+        public string StateStopped = Resources.STATE_STOPPED;
 
+        [DataMember]
         public int dX;
+        [DataMember]
         public int dY;
 
+        [DataMember]
         public int X { get;set; }
-        public int Y { get;set; }      
+        [DataMember]
+        public int Y { get;set; }
 
-        protected Pen FigureColor = new Pen(Randomizer.Randomizer.GetColor()); 
+        [DataMember]
+        public Color PenColor { get; set; } = Randomizer.Randomizer.GetColor();
+        [NonSerialized]
+        protected Pen FigureColor = new Pen(Randomizer.Randomizer.GetColor());
 
+        [DataMember]
         public int Height { get;set; }
+        [DataMember]
         public int Width { get;set; }
 
+        [DataMember]
         public string Name { get;set; }
+        [DataMember]
         public bool IsStopped { get; set; }
 
         public event EventHandler<ClashEventArgs> FigureClash;
@@ -36,9 +49,8 @@ namespace Figures.Model
 
         public Figure(){ }
 
-        protected Figure(Point MaxCoordinate, Pen p = null)
-        {
-            
+        protected Figure(Point MaxCoordinate, Color? p = null)
+        {         
             while (dX == 0 || dY == 0)
             {
                 dX = Randomizer.Randomizer.GetValue(-4, 4);
@@ -49,8 +61,9 @@ namespace Figures.Model
 
             if (!(p is null))
             {
-                FigureColor = p;
+                PenColor = (Color)p; 
             }
+            FigureColor = new Pen(PenColor);       
         }
 
         public void Move(Point pMax , IIntersectable[] otherFigures)
@@ -143,6 +156,12 @@ namespace Figures.Model
         public void Dispose()
         {
             FigureColor.Dispose();
+        }
+
+        [OnDeserialized]
+        internal void SwitchPen(StreamingContext context)
+        {
+            FigureColor = new Pen(PenColor);
         }
     }
 }
